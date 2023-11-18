@@ -4,14 +4,14 @@ def play_level(options, level_name):
         option1, option2 = options[listindex - 1]
 
         print(f"{option1} or {option2}")
-        chosen = int(input("Press 1 or 2: "))
+        chosen = input("Press 1 or 2: ")
 
-        while chosen not in (1, 2):
-            chosen = int(input("Press 1 or 2: "))
+        while chosen not in (f"1", "2"):
+            chosen = input("Press 1 or 2: ")
 
-        if chosen == 1:
+        if chosen == "1":
             chosen=option1
-        elif chosen==2:
+        elif chosen=="2":
             chosen=option2
         print("You chose option:", chosen)
         listindex += 1
@@ -67,14 +67,18 @@ def menu1():
     print("Level 2: Tiere")
     print("Level 3: Freizeit")
     print("Level 4: Schwierige Situationen")
-    level = int(input("Choose level: "))
-    if level == 1:
+    level = input("Choose level: ")
+
+    while level not in (f"1","2","3","4"):
+            level = input("Choose level: ")
+
+    if level == "1":
         level1()
-    elif level == 2:
+    elif level == "2":
         level2()
-    elif level == 3:
+    elif level == "3":
         level3()
-    elif level == 4:
+    elif level == "4":
         level4()
 
 
