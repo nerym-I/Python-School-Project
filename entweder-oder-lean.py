@@ -6,7 +6,7 @@ def play_level(options, level_name):
         print(f"{option1} or {option2}")
         chosen = input("Press 1 or 2: ")
 
-        while chosen not in (f"1", "2"):
+        while chosen not in ("1", "2"):
             chosen = input("Press 1 or 2: ")
 
         if chosen == "1":
@@ -69,7 +69,7 @@ def menu1():
     print("Level 4: Schwierige Situationen")
     level = input("Choose level: ")
 
-    while level not in (f"1","2","3","4"):
+    while level not in ("1","2","3","4"):
             level = input("Choose level: ")
 
     if level == "1":
