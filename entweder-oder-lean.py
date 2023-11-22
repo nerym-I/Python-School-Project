@@ -1,7 +1,7 @@
 from tkinter import *
 from tkinter import ttk
 
-def play_level(options, level_name):
+def play_level(options, window_title):
     listindex = 1
     while listindex < 6:
         option1, option2 = options[listindex - 1]

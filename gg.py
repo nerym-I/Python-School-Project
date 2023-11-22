@@ -1,25 +1,20 @@
 import tkinter as tk
-
-def play_level(options, level_name):
+import time
+def play_level(options, window_title, window):
     listindex = 1
-    while listindex < 6:
+    while listindex < 2:
         option1, option2 = options[listindex - 1]
 
-        print(f"{option1} or {option2}")
-        chosen = input("Press 1 or 2: ")
+        window.withdraw()
+        game_window=tk.Toplevel(window)
+        game_window.title(window_title)
+        game_window.geometry("300x550")
 
-        while chosen not in ("1", "2"):
-            chosen = input("Press 1 or 2: ")
-
-        if chosen == "1":
-            chosen=option1
-        elif chosen=="2":
-            chosen=option2
-        print("You chose option:", chosen)
         listindex += 1
-    menu1()
+    #game_window.withdraw()
+    interface_menu()
 
-def level1():
+def level1(window):
     options = [
         ("Vanilleeis", "Schokoeis"),
         ("Pizza", "Burger"),
@@ -27,10 +22,10 @@ def level1():
         ("Ketchup", "Mayo"),
         ("Wilder bernd Käse", "müritzer herzhafter Schnittkäse"),
     ]
-    play_level(options, "Level 1: Essen")
+    play_level(options, "Level 1: Essen", window)
 
 
-def level2():
+def level2(window):
     options = [
         ("Zierlicher-Prachtkäfer", "Fleckhals-Prachtkäfer"),
         ("Schwarzgesichtklammeraffe", "Kaiserschnurrbarttamarin"),
@@ -38,10 +33,10 @@ def level2():
         ("komischer Kauz", "vertrauenvolle Amsel"),
         ("1000 beiniger tausendfüßler", "999 beiniger tausendfüßler"),
     ]
-    play_level(options, "Level 2: Tiere")
+    play_level(options, "Level 2: Tiere",window)
 
 
-def level3():
+def level3(window):
     options = [
         ("Fortnite", "Minecraft"),
         ("Golf", "Bowling"),
@@ -49,10 +44,10 @@ def level3():
         ("Tennis", "Badminton"),
         ("Bier brauen", "Rebhühner füttern"),
     ]
-    play_level(options, "Level 3: Freizeit")
+    play_level(options, "Level 3: Freizeit",window)
 
 
-def level4():
+def level4(window):
     options = [
         ("kämpfe gegen 10 trolle", "kämpfe gegen omar masari"),
         ("", ""),
@@ -60,10 +55,10 @@ def level4():
         ("erfahre wann du stirbst", "erfahre wie du stirbst"),
         ("sei obdachlos aber sehr glücklich mit Freunden und Familie", "sei Topverdiener in DE aber hab keine Familie, Freunde und sei extrem unglücklich"),
     ]
-    play_level(options, "Level 4: Schwierige Situationen")
+    play_level(options, "Level 4: Schwierige Situationen", window)
 
 
-def level5():
+def level5(window):
     options = [
         ("sei in einem Spiel von Saw gefangen", "sei in einem Haus mit the Nun gefangen"),
         ("werde verfolgt von mommy longlegs", "werde verfolgt von Huggy Wuggy"),
@@ -71,50 +66,27 @@ def level5():
         ("sei auf der Insel Sodor in der Welt von thomas der Lokomotive gefangen", "sei auf der Insel gefangen in der choo-choo charles lebt"),
         ("sei in einem Kinderzimmer mit Annabelle für 60 min. gefangen", "sei "),
     ]
-    play_level(options, "Level 5: Horror")
+    play_level(options, "Level 5: Horror",window)
 
-    
-
-def menu1():
-    print("Level 1: Essen")
-    print("Level 2: Tiere")
-    print("Level 3: Freizeit")
-    print("Level 4: Schwierige Situationen")
-    print("level 5: Horror")
-    level = input("Choose level: ")
-
-    while level not in ("1","2","3","4"):
-            level = input("Choose level: ")
-
-    if level == "1":
-        level1()
-    elif level == "2":
-        level2()
-    elif level == "3":
-        level3()
-    elif level == "4":
-        level4()
-    elif level == "5":
-        level5() 
-        
 def interface_menu():
+    window_title="Menü"
     window = tk.Tk()
-    window.title("Menü")
+    window.title(window_title)
     window.geometry("300x550")
 
-    button_1 = tk.Button(window, text="Level 1", command=level1, width=30, height=5)
+    button_1 = tk.Button(window, text="Level 1: Essen", command=lambda: level1(window), width=30, height=5)
     button_1.pack(pady=7.5)
 
-    button_2 = tk.Button(window, text="Level 2", command=level2, width=30, height=5)
+    button_2 = tk.Button(window, text="Level 2: Tiere", command=lambda: level2(window), width=30, height=5)
     button_2.pack(pady=7.5)
 
-    button_3 = tk.Button(window, text="Level 3", command=level3, width=30, height=5)
+    button_3 = tk.Button(window, text="Level 3: Freizeit", command=lambda: level3(window), width=30, height=5)
     button_3.pack(pady=7.5)
 
-    button_4 = tk.Button(window, text="Level 4", command=level4, width=30, height=5)
+    button_4 = tk.Button(window, text="Level 4: Freizeit", command=lambda: level4(window), width=30, height=5)
     button_4.pack(pady=7.5)
 
-    button_5 = tk.Button(window, text="Level 5", command=level5, width=30, height=5)
+    button_5 = tk.Button(window, text="Level 5: Horror", command=lambda: level5(window), width=30, height=5)
     button_5.pack(pady=7.5 )
 
     # Start the Tkinter event loop
@@ -122,4 +94,5 @@ def interface_menu():
 
 def interface_game():
     pass
+
 interface_menu()
