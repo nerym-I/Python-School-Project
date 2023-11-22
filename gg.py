@@ -68,8 +68,8 @@ def level5():
         ("sei in einem Spiel von Saw gefangen", "sei in einem Haus mit the Nun gefangen"),
         ("werde verfolgt von mommy longlegs", "werde verfolgt von Huggy Wuggy"),
         ("laufe durch einen Wald in dem slender man haust", "laufe durch einen Wald in dem siren head haust"),
-        ("überlebe in five nights at freddys", "überlebe in "),
-        ("", ""),
+        ("sei auf der Insel Sodor in der Welt von thomas der Lokomotive gefangen", "sei auf der Insel gefangen in der choo-choo charles lebt"),
+        ("sei in einem Kinderzimmer mit Annabelle für 60 min. gefangen", "sei "),
     ]
     play_level(options, "Level 5: Horror")
 
@@ -100,7 +100,7 @@ def menu1():
 def interface_menu():
     window = tk.Tk()
     window.title("Menü")
-    window.geometry("300x600")
+    window.geometry("300x550")
 
     button_1 = tk.Button(window, text="Level 1", command=level1, width=30, height=5)
     button_1.pack(pady=7.5)
