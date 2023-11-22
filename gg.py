@@ -1,5 +1,4 @@
-from tkinter import *
-from tkinter import ttk
+import tkinter as tk
 
 def play_level(options, level_name):
     listindex = 1
@@ -99,34 +98,27 @@ def menu1():
         level5() 
         
 def interface_menu():
-    def on_button_click():
-        label.config(text="Example Button")
+    window = tk.Tk()
+    window.title("Menü")
+    window.geometry("300x600")
 
-    # Create the main window
-    root = Tk()
-    root.title("Game Menu")
-    root.geometry("350x600")
+    button_1 = tk.Button(window, text="Level 1", command=level1, width=30, height=5)
+    button_1.pack(pady=7.5)
 
-    # Create buttons, set their size, and place them at specific points
-    button1 = Button(root, text="Button 1", command=on_button_click, width=15, height=2)
-    button1.place(x=50, y=50)
+    button_2 = tk.Button(window, text="Level 2", command=level2, width=30, height=5)
+    button_2.pack(pady=7.5)
 
-    button2 = Button(root, text="Button 2", command=on_button_click, width=15, height=2)
-    button2.place(x=150, y=50)
+    button_3 = tk.Button(window, text="Level 3", command=level3, width=30, height=5)
+    button_3.pack(pady=7.5)
 
-    button3 = Button(root, text="Button 3", command=on_button_click, width=15, height=2)
-    button3.place(x=250, y=50)  
+    button_4 = tk.Button(window, text="Level 4", command=level4, width=30, height=5)
+    button_4.pack(pady=7.5)
 
-    # Create a label in the main window
-    label = Label(root, text="Welcome to the Menu Example!")
-    label.pack(pady=10)
+    button_5 = tk.Button(window, text="Level 5", command=level5, width=30, height=5)
+    button_5.pack(pady=7.5 )
 
-    # Create a button that changes the label text when clicked
-    button = Button(root, text="Click me!", command=on_button_click)
-    button.pack(pady=10)
-
-    # Run the Tkinter event loop
-    root.mainloop()
+    # Start the Tkinter event loop
+    window.mainloop()
 
 def interface_game():
     pass
