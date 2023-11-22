@@ -7,19 +7,18 @@ def play_level(options, level_name):
         option1, option2 = options[listindex - 1]
 
         print(f"{option1} or {option2}")
-        chosen = input("drücke 1 oder 2: ")
+        chosen = input("Press 1 or 2: ")
 
         while chosen not in ("1", "2"):
-            chosen = input("drücke 1 oder 2: ")
+            chosen = input("Press 1 or 2: ")
 
         if chosen == "1":
             chosen=option1
         elif chosen=="2":
             chosen=option2
-        print("wähle aus:", chosen)
+        print("You chose option:", chosen)
         listindex += 1
     menu1()
-
 
 def level1():
     options = [
@@ -70,8 +69,8 @@ def level5():
         ("sei in einem Spiel von Saw gefangen", "sei in einem Haus mit the Nun gefangen"),
         ("werde verfolgt von mommy longlegs", "werde verfolgt von Huggy Wuggy"),
         ("laufe durch einen Wald in dem slender man haust", "laufe durch einen Wald in dem siren head haust"),
-        ("sei auf der Insel Sodor in der Welt von thomas der Lokomotive gefangen", "sei auf der Insel gefangen in der choo-choo charles lebt"),
-        ("sei in einem Kinderzimmer mit Annabelle für 60 min. gefangen", "sei "),
+        ("überlebe in five nights at freddys", "überlebe in "),
+        ("", ""),
     ]
     play_level(options, "Level 5: Horror")
 
@@ -99,12 +98,36 @@ def menu1():
     elif level == "5":
         level5() 
         
-def interface():
+def interface_menu():
+    def on_button_click():
+        label.config(text="Example Button")
+
+    # Create the main window
     root = Tk()
-    frm = ttk.Frame(root, padding=10)
-    frm.grid()
-    ttk.Label(frm, text="Hello World!").grid(column=0, row=0)
-    ttk.Button(frm, text="Quit", command=root.destroy).grid(column=1, row=0)
+    root.title("Game Menu")
+    root.geometry("350x600")
+
+    # Create buttons, set their size, and place them at specific points
+    button1 = Button(root, text="Button 1", command=on_button_click, width=15, height=2)
+    button1.place(x=50, y=50)
+
+    button2 = Button(root, text="Button 2", command=on_button_click, width=15, height=2)
+    button2.place(x=150, y=50)
+
+    button3 = Button(root, text="Button 3", command=on_button_click, width=15, height=2)
+    button3.place(x=250, y=50)  
+
+    # Create a label in the main window
+    label = Label(root, text="Welcome to the Menu Example!")
+    label.pack(pady=10)
+
+    # Create a button that changes the label text when clicked
+    button = Button(root, text="Click me!", command=on_button_click)
+    button.pack(pady=10)
+
+    # Run the Tkinter event loop
     root.mainloop()
 
-interface()
+def interface_game():
+    pass
+interface_menu()
