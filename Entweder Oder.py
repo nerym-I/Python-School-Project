@@ -67,7 +67,7 @@ def level3(window):
 def level4(window):
     options = [
         ("kämpfe gegen 10 Trolle", "kämpfe gegen Omar Masari"),
-        ("", ""),
+        ("hallo", "mama"),
         ("mach 1vs1 gegen Robin", "mach 1vs1 gegen Julian"),
         ("erfahre wann du stirbst", "erfahre wie du stirbst"),
         ("sei obdachlos aber sehr glücklich mit Freunden und Familie", "sei Topverdiener in DE aber hab keine Familie, Freunde und sei extrem unglücklich"),
