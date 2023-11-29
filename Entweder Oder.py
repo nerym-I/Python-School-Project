@@ -41,6 +41,7 @@ def level1(window):
         ("fein geriebene Haferflocken", "grob geriebene Haferflocken"),
         ("Ketchup", "Mayo"),
         ("Wilder bernd Käse", "müritzer herzhafter Schnittkäse"),
+        ("",""),
     ]
     play_level(options, "Level 1: Essen", window)
 
@@ -51,6 +52,7 @@ def level2(window):
         ("schwarze Ameise", "Rote Ameise"),
         ("komischer Kauz", "vertrauenvolle Amsel"),
         ("1000 beiniger tausendfüßler", "999 beiniger tausendfüßler"),
+        ("",""),
     ]
     play_level(options, "Level 2: Tiere", window)
 
@@ -61,6 +63,7 @@ def level3(window):
         ("Bücher", "Filme"),
         ("Tennis", "Badminton"),
         ("Bier brauen", "Rebhühner füttern"),
+        ("",""),
     ]
     play_level(options, "Level 3: Freizeit", window)
 
@@ -71,6 +74,7 @@ def level4(window):
         ("mach 1vs1 gegen Robin", "mach 1vs1 gegen Julian"),
         ("erfahre wann du stirbst", "erfahre wie du stirbst"),
         ("sei obdachlos aber sehr glücklich mit Freunden und Familie", "sei Topverdiener in DE aber hab keine Familie, Freunde und sei extrem unglücklich"),
+        ("",""),
     ]
     play_level(options, "Level 4: Schwierige Situationen", window)
 
@@ -81,6 +85,7 @@ def level5(window):
         ("laufe durch einen Wald, in dem Slender Man haust", "laufe durch einen Wald, in dem Siren Head haust"),
         ("sei auf der Insel Sodor in der Welt von Thomas der Lokomotive gefangen", "sei auf der Insel gefangen, in der Choo-Choo Charles lebt"),
         ("sei in einem Kinderzimmer mit Annabelle für 60 min. gefangen", ""),
+        ("",""),
     ]
     play_level(options, "Level 5: Horror", window)
 
